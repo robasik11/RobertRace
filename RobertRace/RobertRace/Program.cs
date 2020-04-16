@@ -10,6 +10,13 @@ namespace RobertRace
     {
         static void Main(string[] args)
         {
+            Animal Animal = new Animal();
+            Animal.Printstats();
+            Console.ReadKey();
+            Animal.Move();
+            Animal.Printstats();
+            Console.ReadKey();
+
         }
     }
 }

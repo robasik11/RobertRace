@@ -10,7 +10,7 @@ namespace RobertRace
     {
         public int speed;
         public int position = 0;
-        public int energycurrent;
+        public int energycurrent = 20;
         public int energyMax = 20;
 
         static Random generator = new Random();
@@ -39,8 +39,9 @@ namespace RobertRace
 
         public void Printstats()
         {
-            
-
+            Console.WriteLine("EnergyCurrent = " + energycurrent);
+            Console.WriteLine("Position = " + position);
+            Console.WriteLine("Speed = " + speed);
         }
 
     }
