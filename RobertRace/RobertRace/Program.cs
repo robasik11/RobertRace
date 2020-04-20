@@ -8,14 +8,70 @@ namespace RobertRace
 {
     class Program
     {
+
+
+
         static void Main(string[] args)
         {
+            Unicorn Unicorn = new Unicorn();
+            Teddybear Teddybear = new Teddybear();
             Animal Animal = new Animal();
-            Animal.Printstats();
-            Console.ReadKey();
-            Animal.Move();
-            Animal.Printstats();
-            Console.ReadKey();
+            List<Animal> Animals = new List<Animal>();
+
+            while (true)
+            {
+
+                try
+                {
+                    Random rnd = new Random();
+                    int answer;
+                    string aValue;
+                    Console.WriteLine("How many animals would you like to create\nYou need to use numbers..");
+
+                    aValue = Console.ReadLine();
+                    answer = int.Parse(aValue);
+
+
+                    if (answer >= 1)
+                    {
+                        for (int i = 0; i < answer; i++)
+                        {
+                            int rndNumber = rnd.Next(2);
+
+                            switch (rndNumber)
+                            {
+                                case 0:
+                                    Animals.Add(new Unicorn());
+                                    break;
+                                case 1:
+                                    Animals.Add(new Teddybear());
+                                    break;
+
+                            }
+                            Animal.Printstats();
+                            Console.WriteLine();
+                            
+                            Console.ReadKey();
+
+                        }
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine("You need to use a number with the value one or above..");
+                    }
+
+
+
+                }
+                catch
+                {
+
+
+                }
+            }
+
+
 
         }
     }

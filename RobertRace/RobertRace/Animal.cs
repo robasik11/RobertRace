@@ -8,12 +8,25 @@ namespace RobertRace
 {
     class Animal
     {
-        public int speed;
+
+        Unicorn Unicorn = new Unicorn();
+        Teddybear Teddybear = new Teddybear();
         public int position = 0;
         public int energycurrent = 20;
         public int energyMax = 20;
 
         static Random generator = new Random();
+
+        
+
+
+        public void Animalpicker()
+        {
+
+           
+
+        }
+
 
         public void Move()
         {
@@ -39,6 +52,7 @@ namespace RobertRace
 
         public void Printstats()
         {
+            Console.WriteLine(name);
             Console.WriteLine("EnergyCurrent = " + energycurrent);
             Console.WriteLine("Position = " + position);
             Console.WriteLine("Speed = " + speed);

@@ -8,7 +8,8 @@ namespace RobertRace
 {
     class Unicorn : Animal
     {
-
+        public string name = "Unicorn";
+        int speed = 2;
 
     }
 }

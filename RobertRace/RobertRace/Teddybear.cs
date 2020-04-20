@@ -8,6 +8,8 @@ namespace RobertRace
 {
     class Teddybear : Animal
     {
-
+        public static string name = "Teddybear";
+        int speed = 3;
+        
     }
 }
