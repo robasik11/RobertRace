@@ -17,17 +17,29 @@ namespace RobertRace
             Teddybear Teddybear = new Teddybear();
             Animal Animal = new Animal();
             List<Animal> Animals = new List<Animal>();
+            int a = 0;
 
-            while (true)
+
+
+
+
+
+
+
+
+
+
+
+            while (a == 0)
             {
 
                 try
                 {
+
                     Random rnd = new Random();
                     int answer;
                     string aValue;
                     Console.WriteLine("How many animals would you like to create\nYou need to use numbers..");
-
                     aValue = Console.ReadLine();
                     answer = int.Parse(aValue);
 
@@ -36,7 +48,7 @@ namespace RobertRace
                     {
                         for (int i = 0; i < answer; i++)
                         {
-                            int rndNumber = rnd.Next(2);
+                            int rndNumber = rnd.Next(4);
 
                             switch (rndNumber)
                             {
@@ -47,19 +59,31 @@ namespace RobertRace
                                     Animals.Add(new Teddybear());
                                     break;
 
+
+
+
+
                             }
-                            Animal.Printstats();
-                            Console.WriteLine();
-                            
+
+                            break;
+
+                        }
+                        for (int i = answer; i < Animals.Count; i++)
+                        {
+                            Console.WriteLine(Animals[i].name);
                             Console.ReadKey();
 
                         }
-                        break;
+
                     }
                     else
                     {
                         Console.WriteLine("You need to use a number with the value one or above..");
                     }
+
+
+
+
 
 
 
@@ -70,6 +94,7 @@ namespace RobertRace
 
                 }
             }
+
 
 
 

@@ -8,14 +8,14 @@ namespace RobertRace
 {
     class Animal
     {
-
-        Unicorn Unicorn = new Unicorn();
-        Teddybear Teddybear = new Teddybear();
+        public string name;
+        public int speed;
+        
         public int position = 0;
         public int energycurrent = 20;
         public int energyMax = 20;
 
-        static Random generator = new Random();
+        
 
         
 
