@@ -8,16 +8,22 @@ namespace RobertRace
 {
     class Animal
     {
-        public string name;
+        // Unika värden
         public int speed;
-        
+        public int energyCurrent;
+        public int energyMax;
+
+        // Alla djur börjar på position 0
         public int position = 0;
-        public int energycurrent = 20;
-        public int energyMax = 20;
 
-        
+        // Vad för djur
+        public string type;
 
-        
+        static Random generator = new Random();
+
+
+
+
 
 
         public void Animalpicker()
