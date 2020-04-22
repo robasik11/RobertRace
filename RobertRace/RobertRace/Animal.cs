@@ -29,40 +29,48 @@ namespace RobertRace
         public void Animalpicker()
         {
 
-           
+
 
         }
 
 
         public void Move()
         {
-            if (energycurrent >= 1)
+            // Rör sig framåt ifall energy är över 0
+            if (energyCurrent > 0)
             {
-                position++;
-                energycurrent--;
-                if (energycurrent <= 0)
-                {
-                    energycurrent = 20;
+                // Gå framåt antal steg, mellan 1 och djurets speed (+1 på grund av att max värdet inte inkluderas)
+                position += generator.Next(1, speed + 1);
 
+                energyCurrent--;
+
+                // Låt inte position gå över 20
+                if (position > 20)
+                {
+                    position = 20;
                 }
 
+                // Låt inte energyCurrent gå under 0
+                if (energyCurrent <= 0)
+                {
+                    energyCurrent = 0;
+                }
             }
-
         }
 
+        // Återställ energyCurrent till energyMax
         public void Rest()
         {
-            energycurrent = energyMax;
-
+            energyCurrent = energyMax;
         }
 
+        // Skriv ut alla nuvarande stats
         public void Printstats()
         {
-            Console.WriteLine(name);
-            Console.WriteLine("EnergyCurrent = " + energycurrent);
-            Console.WriteLine("Position = " + position);
-            Console.WriteLine("Speed = " + speed);
+            Console.WriteLine("Speed: " + speed);
+            Console.WriteLine("Position: " + position);
+            Console.WriteLine("Energy: " + energyCurrent + "/" + energyMax);
         }
-
     }
 }
+
