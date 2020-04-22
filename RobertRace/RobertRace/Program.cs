@@ -8,16 +8,53 @@ namespace RobertRace
 {
     class Program
     {
-
+        // Random generator
+        static Random generator = new Random();
 
 
         static void Main(string[] args)
         {
-            Unicorn Unicorn = new Unicorn();
-            Teddybear Teddybear = new Teddybear();
-            Animal Animal = new Animal();
-            List<Animal> Animals = new List<Animal>();
-            int a = 0;
+            // Steg 1: Skapa djur 
+
+            // Lista till alla djur
+            List<Animal> animalList = new List<Animal>();
+
+            // Oändlig loop tills användaren skrivit en siffra
+            while (true)
+            {
+                Console.WriteLine("How many animals would you like to create...");
+
+                // Ta in ett värde från användaren
+                string aValue = Console.ReadLine();
+
+                // Försök omvandla till en int
+                bool success = int.TryParse(aValue, out int answer);
+
+                // Ifall omvandlingen gick bra samt över 0
+                if (success && answer > 0)
+                {
+                    // Slumpa fram så många djur som användaren valde
+                    for (int i = 0; i < answer; i++)
+                    {
+                        int rndNumber = generator.Next(2);
+
+                        // Skapa ett djur och skriv ut dess stats
+                        if (rndNumber == 0)
+                        {
+                            Console.WriteLine("Created a Unicorn");
+                            animalList.Add(new Unicorn());
+                            animalList[i].Printstats();
+                        }
+
+                        else if (rndNumber == 1)
+                        {
+                            Console.WriteLine("Created a Teddybear");
+                            animalList.Add(new Teddybear());
+                            animalList[i].Printstats();
+                        }
+
+                        Console.WriteLine("------------------");
+                    }
 
 
 
@@ -28,9 +65,7 @@ namespace RobertRace
 
 
 
-
-
-            while (a == 0)
+                    while (a == 0)
             {
 
                 try
