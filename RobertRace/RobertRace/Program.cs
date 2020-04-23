@@ -57,78 +57,48 @@ namespace RobertRace
                     }
 
 
+                    Console.WriteLine("Press any key to you continue!");
 
+                    Console.ReadKey();
 
-
-
-
-
-
-
-                    while (a == 0)
-            {
-
-                try
-                {
-
-                    Random rnd = new Random();
-                    int answer;
-                    string aValue;
-                    Console.WriteLine("How many animals would you like to create\nYou need to use numbers..");
-                    aValue = Console.ReadLine();
-                    answer = int.Parse(aValue);
-
-
-                    if (answer >= 1)
-                    {
-                        for (int i = 0; i < answer; i++)
-                        {
-                            int rndNumber = rnd.Next(4);
-
-                            switch (rndNumber)
-                            {
-                                case 0:
-                                    Animals.Add(new Unicorn());
-                                    break;
-                                case 1:
-                                    Animals.Add(new Teddybear());
-                                    break;
-
-
-
-
-
-                            }
-
-                            break;
-
-                        }
-                        for (int i = answer; i < Animals.Count; i++)
-                        {
-                            Console.WriteLine(Animals[i].name);
-                            Console.ReadKey();
-
-                        }
-
-                    }
-                    else
-                    {
-                        Console.WriteLine("You need to use a number with the value one or above..");
-                    }
-
-
-
-
-
-
-
+                    // Skapat alla djur, så lämna while-loop
+                    break;
                 }
-                catch
+
+
+                // Användaren skrev en int men inte med värde över 0
+                else if (success)
                 {
+                    Console.WriteLine("\nYou need to use a number with the value one or above..\n");
+                }
 
-
+                // Användaren skrev inte en int
+                else
+                {
+                    Console.WriteLine("\nYou need to write an int!\n");
                 }
             }
+
+            Console.Clear();
+
+
+            // Steg 2: Race
+
+            // Slumpa ett djur som ska racea
+            Animal raceAnimal = animalList[generator.Next(animalList.Count)];
+
+            Console.WriteLine("The chosen animal is...");
+            Console.WriteLine(raceAnimal.type);
+
+            Console.WriteLine("Press any key to start the race!");
+
+            Console.ReadKey();
+            Console.Clear();
+
+            int round = 0;
+
+
+
 
 
 
