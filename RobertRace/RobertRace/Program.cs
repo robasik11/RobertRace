@@ -98,7 +98,61 @@ namespace RobertRace
             int round = 0;
 
 
+            while (true)
+            {
+                Console.WriteLine("Round: " + round);
+                raceAnimal.Printstats();
+                Console.WriteLine("-------------------");
 
+                // Oändlig loop tills användaren skrivit 1 eller 2
+                while (true)
+                {
+                    Console.WriteLine("Choose an option.");
+                    Console.WriteLine("1 = Move, 2 = Rest");
+
+                    // Ta in ett värde från användaren
+                    string aValue = Console.ReadLine();
+
+                    // Försök omvandla till en int
+                    int.TryParse(aValue, out int answer);
+
+                    // Ifall användaren skrev 1
+                    if (answer == 1)
+                    {
+                        raceAnimal.Move();
+                        break;
+                    }
+
+                    // Ifall användaren skrev 2 
+                    else if (answer == 2)
+                    {
+                        raceAnimal.Rest();
+                        break;
+                    }
+
+                    // Användaren skrev en int men inte mellan 1-2
+                    else
+                    {
+                        Console.WriteLine("\nYou need to write an int between 1-2!\n");
+                    }
+                }
+
+                // Djuret har klarat loppet
+                if (raceAnimal.position == 20)
+                {
+                    Console.WriteLine("Congratulations! You won!");
+                    Console.ReadKey();
+                    break;
+                }
+
+                // Gör till nästa runda
+                else
+                {
+                    round++;
+                }
+
+                Console.Clear();
+            }
 
 
 
